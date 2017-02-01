@@ -31,6 +31,7 @@ class TicTacToe {
 
     isFinished() {
         return (this.isDraw() || this.getWinner() != null) ? true : false;
+        // this.getWinner();
     }
 
     getWinner() {
@@ -56,15 +57,14 @@ class TicTacToe {
     }
 
     noMoreTurns() {
-        var noMore = false;
          for (var i=0; i<3;i++){
             for (var j=0; j<3;j++){
                 if (this.matrix[i][j] == null) {
-                    noMore = false;
-                    break;
-                } else noMore = true;
-            }}
-        return noMore;
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     isDraw() {
